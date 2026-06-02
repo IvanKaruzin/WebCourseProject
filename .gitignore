@@ -1,0 +1,10 @@
+*.csv
+*.pdf
+
+# Environment variables — never commit real secrets
+.env
+
+# Python / Django
+__pycache__/
+*.pyc
+db.sqlite3
