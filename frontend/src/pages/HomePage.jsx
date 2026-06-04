@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="container">
           <h1 className="hero-title">Откройте мир <span>кино</span></h1>
           <p className="hero-subtitle">
-            1000 лучших фильмов IMDb — рейтинги, отзывы, актёры и режиссёры в одном месте.
+            Полная коллекция лучших фильмов с начала времён  — рейтинги, отзывы, актёры и режиссёры в одном месте.
           </p>
           <form className="hero-search" onSubmit={handleSearch}>
             <input
@@ -41,7 +41,7 @@ export default function HomePage() {
             />
             <button type="submit">Найти</button>
           </form>
-          <Link to="/movies" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>
+          <Link to="/movies" className="btn btn-outline">
             Смотреть весь каталог →
           </Link>
         </div>

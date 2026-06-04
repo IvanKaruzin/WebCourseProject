@@ -207,8 +207,8 @@ input, textarea, select { font-family: inherit; }
 
 /* ── Hero ── */
 .hero {
-  background: linear-gradient(135deg, #111111 0%, #1a1a1a 50%, #0d0d0d 100%);
-  color: #ffffff;
+  background: linear-gradient(180deg, #f7ce2a 0%, #ffffff 100%);
+  color: var(--text);
   padding: 80px 0 72px;
   text-align: center;
   position: relative;
@@ -218,9 +218,13 @@ input, textarea, select { font-family: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(245,197,24,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(247, 200, 31, 0.85) 0%, transparent 70%);
   pointer-events: none;
 }
+[data-theme="dark"] .hero {
+  background: linear-gradient(180deg, var(--navbar-bg) 0%, var(--bg) 100%);
+}
+.hero .container { position: relative; z-index: 1; }
 .hero-title {
   font-size: clamp(36px, 6vw, 64px);
   font-weight: 800;
@@ -228,10 +232,18 @@ input, textarea, select { font-family: inherit; }
   line-height: 1.1;
   margin-bottom: 16px;
 }
-.hero-title span { color: var(--accent); }
+.hero-title span {
+  color: var(--accent);
+  background: var(--navbar-bg);
+  padding: 0.08em 0.25em;
+  border-radius: 10px;
+  text-box: trim-both cap alphabetic;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 .hero-subtitle {
   font-size: 18px;
-  color: #aaaaaa;
+  color: var(--text);
   max-width: 520px;
   margin: 0 auto 36px;
 }

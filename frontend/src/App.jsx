@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import ScrollToTop from './components/ScrollToTop'
 import { AuthProvider } from './contexts/AuthContext'
 import FavoritesPage from './pages/FavoritesPage'
 import HomePage from './pages/HomePage'
@@ -24,6 +25,7 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main style={{ minHeight: 'calc(100vh - 62px - 80px)', background: 'var(--bg)' }}>
           <Routes>

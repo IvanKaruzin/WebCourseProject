@@ -23,7 +23,7 @@ export default function Navbar({ theme, toggleTheme }) {
   return (
     <nav className="navbar">
       <div className="container navbar-inner">
-        <Link to="/" className="navbar-brand">★<span>CineVault</span></Link>
+        <Link to="/" className="navbar-brand">★<span>PosterFall</span></Link>
         <div className="navbar-nav">
           <NavLink to="/movies" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>
             Фильмы

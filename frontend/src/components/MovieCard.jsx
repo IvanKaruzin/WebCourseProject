@@ -1,13 +1,21 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function MovieCard({ movie }) {
   const navigate = useNavigate()
+  const [imgError, setImgError] = useState(false)
 
   return (
     <div className="movie-card" onClick={() => navigate(`/movies/${movie.id}`)} role="button" tabIndex={0}
       onKeyDown={e => e.key === 'Enter' && navigate(`/movies/${movie.id}`)}>
-      {movie.poster_url
-        ? <img src={movie.poster_url} alt={movie.title} className="movie-card-poster" loading="lazy" />
+      {movie.poster_url && !imgError
+        ? <img
+            src={movie.poster_url}
+            alt={movie.title}
+            className="movie-card-poster"
+            loading="lazy"
+            onError={() => setImgError(true)}
+          />
         : <div className="movie-card-poster-placeholder">🎬</div>
       }
       <div className="movie-card-body">

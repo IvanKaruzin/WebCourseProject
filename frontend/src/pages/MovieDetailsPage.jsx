@@ -140,7 +140,7 @@ export default function MovieDetailsPage() {
               <div className="genre-chips-row">
                 {movie.genres.map(g => (
                   <Link key={g.id} to={`/movies?genre=${encodeURIComponent(g.name)}`}
-                    className="genre-chip" style={{ color: '#111' }}>
+                    className="genre-chip">
                     {g.name}
                   </Link>
                 ))}
