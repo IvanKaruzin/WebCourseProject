@@ -11,6 +11,12 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'movie'],
+                name='unique_user_movie_review'
+            ),
+    ]
 
     def __str__(self):
         return f'{self.user} -> {self.movie} ({self.rating})'
